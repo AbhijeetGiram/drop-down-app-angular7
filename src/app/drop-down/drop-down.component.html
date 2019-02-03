@@ -1,0 +1,28 @@
+<section class="container-fluid">
+
+
+  <div *ngFor="let feild of dropdownOptions; let i =index" style="margin: 4%">
+    <div class="row optionTable">
+      <div class="col-6">
+          <input type="text" #label1="ngModel" class="form-control" name="label1" [(ngModel)]="feild.label" placeholder="Country Name">
+
+      </div>
+      <div class="col-3">
+          <input type="text" #label2="ngModel" class="form-control" name="label2" [(ngModel)]="feild.value" placeholder="Country Code">    
+      </div>
+      <div class="col-3">
+          <button type="button" class="btn btn-danger" (click)="deleteFieldValue(i)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+      </div>
+      
+    </div>
+
+  </div>
+
+  <button type="button" class="btn btn-dark" style="margin: 2%" (click)="addFieldValue()">Add Option</button>
+
+  <div class="row" style="margin: 2%">
+
+    <button type="button" class="offset-md-3 col-6 col-md-3 btn btn-info" (click)="exportCSV()">Export CSV</button>
+    <button type="button" class="col-md-3  col-6 btn btn-success" (click)="updateOptions()">Save</button>
+  </div>
+</section>
